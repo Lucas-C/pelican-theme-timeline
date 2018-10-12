@@ -6,6 +6,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <base href="{{ SITEURL }}/"><!-- This makes all links relative to the theme/ & images/ folders resolve correctly -->
         {% if NOINDEX %}
         <meta name="robots" content="noindex">
         {% endif %}
@@ -33,7 +34,7 @@
         {% if TAG_FEED_RSS and tag %}
         <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
         {% endif %}
-        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/timeline.css"/>
+        <link rel="stylesheet" href="theme/css/timeline.css"/>
         <style>{{ CUSTOM_CSS }}</style>
         {% endblock head %}
     </head>
