@@ -69,7 +69,7 @@ a:hover{text-decoration:none; color: #6594b5;}
 .year li:nth-last-child(-n+12){display:inline-block;}
 
 /*----- CONTENT -----*/
-.container {margin: 0 auto; padding-bottom: 20px; width: 980px;}
+.container {margin: 0 auto; padding-bottom: 20px; width: 1020px;}
 
 .informations {margin: 20px 20px 320px;}
 .informations h2 {font-size: 36px;}
@@ -114,6 +114,10 @@ a:hover{text-decoration:none; color: #6594b5;}
 .item .post img { display: block; margin: 1rem auto; max-height: 20rem; }
 
 .wrapper-timeline {background: url("/theme/img/line.png") center 0 repeat-y;}
+.wrapper-timeline .item .post.video {height: 233px; margin: 0 auto; width: 400px;}
+.wrapper-timeline .item .post.photo {margin: 0 auto; width: 400px;}
+.wrapper-timeline .item .post.photo  img{margin: 0 auto; width: 400px;}
+.wrapper-timeline { position: relative; padding-bottom: 50px; }
 
 /* hack for single post */
 .single .item {width: 640px; margin-left: auto; margin-right: auto; float: none;}
