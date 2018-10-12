@@ -11,6 +11,8 @@
 
     NOINDEX = True
 
+    CUSTOM_CSS = ''
+
 
 ## License
 

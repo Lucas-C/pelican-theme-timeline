@@ -34,23 +34,20 @@
         <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
         {% endif %}
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/timeline.css"/>
+        <style>{{ CUSTOM_CSS }}</style>
         {% endblock head %}
     </head>
-    <body style="background-image: url({{ BACKGROUND_IMAGE }});">
+    <body>
         <header class="header">
             <div class="top">
-                <div class="wrap">
-                    <div class="logo">
-                        <h1><a href="{{ SITEURL }}" title="{{ SITESUBTITLE }}">{{ SITENAME }}</a></h1>
-                        <p>{{ DESCRIPTION }}</p>
-                    </div>
-                </div>
+                <h1><a href="{{ SITEURL }}" title="{{ SITESUBTITLE }}">{{ SITENAME }}</a></h1>
+                <p>{{ DESCRIPTION }}</p>
             </div>
 
             {% if MONTH_ARCHIVE_SAVE_AS %}
-            <nav class="date">
+            <nav>
             {% for year in dates | map(attribute='date.year') | unique %}
-                <div class="wrap">
+                <div class="date">
                     <ul class="year">
                     {{ year }} :
                     {% for month in dates | map(attribute='date') | selectattr('year', 'equalto', year) | map('strftime', '%Y %m %B') | unique %}
@@ -66,7 +63,9 @@
             {% endif %}
         </header>
 
+        <div class="content" style="background-image: url({{ BACKGROUND_IMAGE }});">
         {% block content %}
         {% endblock %}
+        </div>
     </body>
 </html>

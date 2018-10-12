@@ -10,12 +10,7 @@ q:before,q:after{ content:'';}
 abbr,acronym{ border:0;}
 
 /*----- Intro -----*/
-body {
-    color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.3;
-    min-width: 1024px;
-    background: white center top no-repeat;
-    background-size: contain;
-}
+body { color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.3; }
 
 textarea{ resize:none;}
 a:link, a:visited, a:hover, a:active { outline:none }
@@ -23,7 +18,8 @@ a{color: #4c7999;cursor:pointer;outline:none;position:relative;text-decoration:n
 a:hover{text-decoration:none; color: #6594b5;}
 ::-moz-focus-inner{ border:0; }
 
-.wrap {margin: 0 auto; overflow: hidden; position: relative; width: 980px;}
+.content {margin: 0 auto; padding-bottom: 20px; width: 1020px; background: white center top no-repeat; background-size: contain;}
+.wrap {margin: 0 auto; overflow: hidden; position: relative; width: 1020px;}
 .cl,.cr,.cb{ display:block !important; float:none !important; height:0 !important; width:0 !important;}
 .cl{ clear:left;}
 .cr{ clear:right;}
@@ -46,38 +42,26 @@ a:hover{text-decoration:none; color: #6594b5;}
 .clearfix {clear: both;}
 
 /*----- HEADER  -----*/
-.top {background: url("/theme/img/header.png") repeat; height: 60px; line-height: 60px;}
-.top .logo {float: left; width: 630px; height: 60px; overflow: hidden;}
-.top .logo a {color: #FFF;}
+.top {background: url("/theme/img/header.png") repeat; height: 60px; line-height: 60px; padding: 0 2rem;}
+.top a {color: #FFF;}
 .top a,
 .top a:visited {color: #FFF; float: left; font-family: 'Conv_Gotham-Black_0', Arial, sans-serif; font-size: 16px; color: #fff; margin-right: 5px; text-shadow: 0px 1px 1px #000;}
 .top p {float: left; font-size: 13px; font-style: italic; color: #a3a3a3; letter-spacing: -0.5px; text-shadow: 0px 1px 0px #000;}
 
 /*----- NAV DATE -----*/
-.date .wrap {background: url("/theme/img/date.png") repeat; height: 41px; line-height: 38px;}
+.date {background: url("/theme/img/date.png") repeat; height: 41px; line-height: 38px;}
 .date a {display: block; font-weight: bold;}
 .date .control-left {float: left; margin-top: 2px;}
 .date .control-right {float: right; margin-top: 2px;}
 .date ul {margin: 0 auto; width: 940px;overflow:hidden; text-align: center;}
 .date li {color: #969696; display: inline-block; margin: 0 13px;}
 .date li.last {margin-right: 0;}
-.date .active a {border-bottom: 2px solid #4b9fd3;}
 .date li a:hover{border-bottom: 2px solid #e2eaef;}
-.date .active a {color: #4c7999;}
 
 .year li{display:none;}
 .year li:nth-last-child(-n+12){display:inline-block;}
 
 /*----- CONTENT -----*/
-.container {margin: 0 auto; padding-bottom: 20px; width: 1020px;}
-
-.informations {margin: 20px 20px 320px;}
-.informations h2 {font-size: 36px;}
-.informations p {font-size: 18px;}
-.informations a {font-weight: bold; color: #fff; text-decoration: underline;}
-.informations .social {overflow: hidden; margin-top: 15px;}
-.informations .social li{float: left; margin-right: 10px;}
-
 .back {text-align: center;}
 
 .items.left {float:left;}
