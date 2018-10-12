@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        {% block head %}
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        {% if NOINDEX %}
+        <meta name="robots" content="noindex">
+        {% endif %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss" />
+        {% endblock head %}
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/timeline.css"/>
+    </head>
+    <body style="background-image: url({{ BACKGROUND_IMAGE }});">
+        <header class="header">
+            <div class="top">
+                <div class="wrap">
+                    <div class="logo">
+                        <h1>
+                            <a href="{{ SITEURL }}" title="{{ SITESUBTITLE }}">{{ SITENAME }}</a>
+                        </h1>
+                        <p>{{ DESCRIPTION }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="date">
+            {% for year in dates | map(attribute='date.year') | unique %}
+                <div class="wrap">
+                    <ul class="year">
+                    {{ year }} :
+                    {% for month in dates | map(attribute='date') | selectattr('year', 'equalto', year) | map('strftime', '%Y %m %B') | unique %}
+                        {% set Y, m, B = month.split() %}
+                        <li data-year="{{ Y }}" data-month="{{ m }}">
+                            <a href="/archive/{{ Y }}-{{ m }}/" title="Archives {{ B }} {{ Y }}">{{ B }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+            </nav>
+</header>
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
+                                                                                                

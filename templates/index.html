@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="wrapper-timeline">
+        <!-- List items -->
+        <div class="items-wrapper">
+            <!-- Left col -->
+            <div class="items left">
+                {% for article in ((dates_page and dates_page.object_list) or dates) %}
+                {% if loop.index is not divisibleby 2 %}
+                {% include 'index_item.html' %}
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!-- Right col -->
+            <div class="items right">
+                {% for article in ((dates_page and dates_page.object_list) or dates) %}
+                {% if loop.index is divisibleby 2 %}
+                {% include 'index_item.html' %}
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+            {% if dates_page %}
+            <p class="load-more">
+                <a href="/page/{{dates_page.number + 1}}">Afficher plus d'articles</a>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
