@@ -7,9 +7,7 @@
             <h2>{{ article.title }}</h2>
             <p class="infos">Publié {{article.date|strftime('%d %B %Y')}} par {{article.author}}</p>
         </div>
-        <div class="post">
-            {{ article.content }}
-        </div>
+        <div class="post">{{ article.content }}</div>
 
         <div class="back">
             <a href="{{ SITEURL }}">Retour à l'accueil</a>

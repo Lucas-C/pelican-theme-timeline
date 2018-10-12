@@ -18,14 +18,13 @@
             <div class="top">
                 <div class="wrap">
                     <div class="logo">
-                        <h1>
-                            <a href="{{ SITEURL }}" title="{{ SITESUBTITLE }}">{{ SITENAME }}</a>
-                        </h1>
+                        <h1><a href="{{ SITEURL }}" title="{{ SITESUBTITLE }}">{{ SITENAME }}</a></h1>
                         <p>{{ DESCRIPTION }}</p>
                     </div>
                 </div>
             </div>
 
+            {% if MONTH_ARCHIVE_SAVE_AS %}
             <nav class="date">
             {% for year in dates | map(attribute='date.year') | unique %}
                 <div class="wrap">
@@ -41,10 +40,10 @@
                 </div>
             {% endfor %}
             </nav>
-</header>
+            {% endif %}
+        </header>
 
         {% block content %}
         {% endblock %}
     </body>
 </html>
-                                                                                                

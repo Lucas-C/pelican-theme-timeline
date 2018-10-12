@@ -21,10 +21,8 @@
                 {% endfor %}
             </div>
             <div class="clearfix"></div>
-            {% if dates_page %}
-            <p class="load-more">
-                <a href="/page/{{dates_page.number + 1}}">Afficher plus d'articles</a>
-            </p>
+            {% if DEFAULT_PAGINATION and dates_page %}
+            <p class="load-more"><a href="/page/{{dates_page.number + 1}}">Afficher plus d'articles</a></p>
             {% endif %}
         </div>
     </div>
